@@ -5,26 +5,20 @@
 # Author: Ronald Kaiser
 # Email: raios dot catodicos at gmail dot com
 #
-# Observation: This unfortunately doesn't solve the problem 
-# in the time limit imposed by codechef.
-# As it's based on recursion and generates a binary tree, 
-# this solution for n > 20 becomes slow (in an ordinary machine).
+# Observation: This is a so much better version than the
+# previous one, but it can be better.
 #
-# Actually, this approach is really stupid. Since, the number of
-# operations is 2^100 in the worst case.
-# This algorithm is omega(2^n).
-# Really stupid. I'm ashamed, =P
-#
-# Better trying another approach.
-# 
-
 
 use List::Util qw[max];
 
 my @triangle = ();
+my @memoized = ();
 
 sub solve {
-    (my $sum, my $l, my $c) = @_;
+    my ($sum, $l, $c) = @_;
+    if (undef != $memoized[$l]->[$c]) {
+        return $memoized[$l]->[$c];
+    };
 
     $sum += $triangle[$l]->[$c];
     my $path1, my $path2 = 0, 0;
@@ -34,8 +28,10 @@ sub solve {
         if(undef != $triangle[$l + 1]->[$c + 1]) { 
             $path2 = solve($sum, $l + 1, $c + 1)
         }
+        $memoized[$l]->[$c] = $sum;
         return max($path1, $path2); 
    } else {
+       $memoized[$l]->[$c] = $sum;
        return $sum;
    };
 };
@@ -45,6 +41,7 @@ chop(my $n = <>);
 while(<>) {
     chop; 
     @triangle = ();
+    @memoized = ();
     for(1 .. $_) {
         my $line = <>;
         my @line = split(/\s+/, $line);
