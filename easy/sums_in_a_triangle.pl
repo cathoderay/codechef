@@ -9,9 +9,15 @@
 # in the time limit imposed by codechef.
 # As it's based on recursion and generates a binary tree, 
 # this solution for n > 20 becomes slow (in an ordinary machine).
-# 
+#
+# Actually, this approach is really stupid. Since, the number of
+# operations is 2^100 in the worst case.
+# This algorithm is omega(2^n).
+# Really stupid. I'm ashamed, =P
+#
 # Better trying another approach.
 # 
+
 
 use List::Util qw[max];
 
