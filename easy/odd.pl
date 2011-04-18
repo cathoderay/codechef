@@ -7,11 +7,10 @@
 #
 
 
-my $n = <STDIN>;
-chomp($n);
+chop(my $n = <>);
 
-while(<STDIN>) {
-    chomp($_);
+while(<>) {
+    chop;
     print 1 << int(log($_)/log(2));
 
     print "\n";
