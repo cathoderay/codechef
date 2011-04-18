@@ -18,8 +18,7 @@ if ($k == 1) {
 my $counter = 0;
 while(<>) {
     chop;
-    if ($_ % $k == 0)
-        $counter++;
+    $counter++ if ($_ % $k == 0) 
 };
 
 print $counter . "\n";
