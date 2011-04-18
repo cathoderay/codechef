@@ -7,8 +7,8 @@
 #
 
 
-my $in = <STDIN>;
-(my $n, my $k) = split(/\s+/, $in);
+my $in = <>;
+my ($n, $k) = split(/\s+/, $in);
 
 if ($k == 1) {
     print $n . "\n";
@@ -16,11 +16,10 @@ if ($k == 1) {
 };
 
 my $counter = 0;
-while(<STDIN>) {
-    chomp($_);
-    if ($_ % $k == 0) {
+while(<>) {
+    chop;
+    if ($_ % $k == 0)
         $counter++;
-    };
 };
 
 print $counter . "\n";
