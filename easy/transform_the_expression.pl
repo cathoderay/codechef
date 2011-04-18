@@ -7,15 +7,13 @@
 #
 
 
-my $n = <STDIN>;
-chop($n);
+chop(my $n = <>);
 
 while(<STDIN>) {
-    chop($_);
+    chop;
 
     my @in = split(//, $_);
-    my @operators = ();
-    my @solution = ();
+    my (@operators, @solution) = (), ();
     my $i = 0;
     for (@in) {
         if ($_ =~ m/[a-z]/) {
@@ -27,7 +25,7 @@ while(<STDIN>) {
         }
         $i++;
     };
-    print @solution; 
+    print @solution;
     print "\n";
     
     $n--;
