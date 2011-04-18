@@ -7,49 +7,29 @@
 #
 # Observation: This is a so much better version than the
 # previous one, but it can be better.
+# This code didn't pass in the Time limit of codechef, although
+# the same algorithm in C code, runs pretty well. 
+# Investigate a better approach in Perl.
 #
 
-use List::Util qw[max];
 
-my @triangle = ();
-my @memoized = ();
+chomp(my $n = <>);
 
-sub solve {
-    my ($sum, $l, $c) = @_;
-    if (undef != $memoized[$l]->[$c]) {
-        return $memoized[$l]->[$c];
-    };
-
-    $sum += $triangle[$l]->[$c];
-    my $path1, my $path2 = 0, 0;
-
-    if (undef != $triangle[$l + 1]) {
-        $path1 = solve($sum, $l + 1, $c);
-        if(undef != $triangle[$l + 1]->[$c + 1]) { 
-            $path2 = solve($sum, $l + 1, $c + 1)
-        }
-        $memoized[$l]->[$c] = $sum;
-        return max($path1, $path2); 
-   } else {
-       $memoized[$l]->[$c] = $sum;
-       return $sum;
-   };
-};
-
-chop(my $n = <>);
-
+my @triangle = [];
 while(<>) {
-    chop; 
-    @triangle = ();
-    @memoized = ();
+    chomp($_);
     for(1 .. $_) {
-        my $line = <>;
-        my @line = split(/\s+/, $line);
-        push(@triangle, \@line);
-    }   
+        my @line = split(/\s+/, <>);
+        @triangle[$_ - 1] = \@line;
+    }  
+    for (my $i = $_-2; $i >= 0; $i--) { 
+        for (my $j = 0; $j <= $i; $j++) {
+            $triangle[$i][$j] += ($triangle[$i+1][$j] > $triangle[$i+1][$j+1]) ? 
+                                    $triangle[$i+1][$j] : $triangle[$i+1][$j+1];
+        }
+    };
+    print "$triangle[0]->[0]" . "\n";
 
-    print solve(0, 0, 0);
-    print "\n";
     $n--;
     last if $n == 0;
 };
