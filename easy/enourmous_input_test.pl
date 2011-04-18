@@ -7,8 +7,7 @@
 #
 
 
-my $in = <>;
-my ($n, $k) = split(/\s+/, $in);
+my ($n, $k) = split(/\s+/, <>);
 
 if ($k == 1) {
     print $n . "\n";
