@@ -11,9 +11,8 @@ chop(my $n = <>);
 
 while(<>) {
     chop;
-    print 1 << int(log($_)/log(2));
+    print 1 << int(log($_)/log(2)) . "\n";
 
-    print "\n";
     $n--;
     last if $n == 0;
 };
