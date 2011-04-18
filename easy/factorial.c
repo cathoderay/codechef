@@ -10,11 +10,7 @@
 #include<stdio.h>
 
 int main() {
-    int n;
-    int step;
-    int sum;
-    int t;
-    int i;
+    int n, step, sum, t, i;
 
     scanf("%d", &t);
     for(i = 0; i < t; i++) {
