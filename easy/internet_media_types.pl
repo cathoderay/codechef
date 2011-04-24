@@ -21,7 +21,7 @@ for (1 .. $n ) {
 for (1 .. $q) {
     chomp(my $line = <>);
     if ($line =~ m/.*\.(?<ext>[a-z0-9]+)/ig) {
-	my $ext = $+{ext};
+        my $ext = $+{ext};
         (exists $table->{$ext}) ? say "$table->{$ext}" : say "unknown";
     } else {
         say "unknown";
