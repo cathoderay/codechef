@@ -38,10 +38,9 @@ int main() {
     while(t--) {
         scanf("%d %d", &n, &m);
 
-        for(i = 0; i < n; i++) {
-            scanf("%d", &f);
-            v[i] = f;
-        }
+        for(i = 0; i < n; i++) 
+            scanf("%d", &v[i]);
+
         f = 0;
         max = 1 << n;
         for(i = 0; i < max; i++) {
