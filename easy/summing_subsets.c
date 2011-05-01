@@ -18,6 +18,9 @@
  F(n) = 2^(n - 1)((1 + n)n/2)
  F(n) = 2^(n - 2)(1  + n)n, n >= 2
  F(n) = 2^(n - 2)(n^2 + n), for all n >= 2, since the base is F(1) = 1.
+
+ There's a "jump from the cat" to see that for n > 24 the solution is 8388608 - 1.
+ Trying to convince myself yet...
 */
 
 
@@ -38,7 +41,7 @@ int main() {
     scanf("%d", &t);
     for(i = 0; i < t; i++) {
         scanf("%lld", &n);
-        if (n <=23 ) 
+        if (n <= 23) 
             printf("%lld\n", solve(n));
         else
             printf("8388607\n");
