@@ -24,7 +24,7 @@ for i in range(t):
     sol = 0  
     while(ptr_pw >=0 and ptr_rw >= 0):
         if pw[ptr_pw] <= rw[ptr_rw]:
-	    sol += 1
+            sol += 1
             ptr_rw -= 1
         ptr_pw -= 1
     print sol 
