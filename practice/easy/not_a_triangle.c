@@ -27,7 +27,7 @@ int find_first_greater(int x, int start, int end) {
     m = start + (end - start)/2;
     if (v[m] > x) {        
         if (m == 0)
-            return 0;
+            return m;
         if (v[m - 1] > x)
             return find_first_greater(x, start, m - 1);
         else
