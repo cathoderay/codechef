@@ -10,13 +10,8 @@
 #include<stdio.h>
 
 int main() {
-    int v;
-    while (1) {
-        scanf("%d\n", &v);
-        if (v == 42) 
-            break; 
-        else 
-            printf("%d\n", v);
-    }
+    int x;
+    while(scanf("%d", &x) && x != 42)
+        printf("%d\n", x);
     return 0;
 }
