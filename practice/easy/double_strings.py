@@ -11,5 +11,4 @@ __email__ = "raios dot catodicos at gmail dot com"
 max = lambda x: x if x % 2 == 0 else x - 1
 
 for i in range(int(input())):
-    x = int(input())
-    print(max(x))
+    print(max(int(input())))
