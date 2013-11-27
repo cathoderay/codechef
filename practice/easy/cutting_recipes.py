@@ -9,9 +9,6 @@ __author__ = "Ronald Kaiser"
 __email__ = "raios dot catodicos at gmail dot com"
 
 
-import math
-
-
 def solve(numbers):
     n = len(numbers)
     for i in range(2, int(round(max(numbers)/2.0) + 1) + 1):
