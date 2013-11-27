@@ -11,7 +11,7 @@ __email__ = "raios dot catodicos at gmail dot com"
 
 def solve(numbers):
     n = len(numbers)
-    for i in range(2, int(round(max(numbers)/2.0) + 1) + 1):
+    for i in range(2, int(round(max(numbers)/2.0) + 2)):
         while True:
             if len(list(filter(lambda x: x % i == 0, numbers))) == n:
                 numbers = list(map(lambda x: int(x/i), numbers))
