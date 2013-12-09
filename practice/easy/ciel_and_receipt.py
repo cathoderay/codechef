@@ -1,6 +1,6 @@
 """
- Problem: Count of Maximum 
- URL: http://www.codechef.com/problems/MAXCOUNT
+ Problem: Ciel and Receipt 
+ URL: http://www.codechef.com/problems/CIELRCPT
 """
 
 __author__ = "Ronald Kaiser"
