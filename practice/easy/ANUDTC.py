@@ -10,7 +10,7 @@ __email__ = "raios dot catodicos at gmail dot com"
 for _ in range(int(input())):
     N = int(input())
 
-    if 360 % N == 0 and N <= 360:
+    if N <= 360 and 360 % N == 0:
         print("y", end = " ")
     else:
         print("n", end = " ")
