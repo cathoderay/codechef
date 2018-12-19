@@ -7,11 +7,8 @@ __author__ = "Ronald Kaiser"
 __email__ = "raios dot catodicos at gmail dot com"
 
 
-import sys
-
-
 for _ in range(int(input())):
-    s = sys.stdin.readline()
+    s = input()
     
     n = 0
     count = 0
