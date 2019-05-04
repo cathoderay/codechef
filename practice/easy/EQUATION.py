@@ -49,8 +49,8 @@ for _ in range(int(input())):
     N, A, B, C = list(map(int, input().split()))
 
     f = lambda N: (N+1)*(N+2)*(N+3)//6
-    is_positive = lambda x: x >= 0
+    non_negative = lambda x: x >= 0
     to_sum = [N, N-A-B-2, N-B-C-2, N-A-C-2]
     to_subtract = [N-A-1, N-B-1, N-C-1, N-A-B-C-3]
-    do = lambda x: sum(map(f, filter(is_positive, x)))
+    do = lambda x: sum(map(f, filter(non_negative, x)))
     print(do(to_sum) - do(to_subtract))
