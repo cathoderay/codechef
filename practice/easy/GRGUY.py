@@ -6,9 +6,6 @@
 __author__ = "Ronald Kaiser"
 __email__ = "raios dot catodicos at gmail dot com"
     
-from math import inf
-import sys
-
 
 for _ in range(int(input())):
     l1, l2 = input(), input()
