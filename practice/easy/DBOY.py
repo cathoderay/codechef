@@ -26,7 +26,7 @@ def solve(H, K):
 for _ in range(int(input())):
     N = int(input())
     H = list(map(int, input().split()))
-    K = list(map(int, input().split()))
+    K = list(set(map(int, input().split())))
     K.sort()
     print(solve(H, K))
 
