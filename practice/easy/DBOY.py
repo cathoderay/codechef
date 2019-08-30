@@ -15,17 +15,18 @@ def solve(H, K):
     dp = [0] + [inf for _ in range(N-1)]
     
     for i in range(1, N):
-        m = dp[i]
         for j in K:
             if i - j >= 0:
-                m = min(m, dp[i - j] + 1)  
-        dp[i] = m
+                dp[i] = min(dp[i], dp[i - j] + 1)
+            else:
+                break
     return sum([dp[2*h] for h in H])
              
 
 for _ in range(int(input())):
     N = int(input())
     H = list(map(int, input().split()))
-    K = list(set(map(int, input().split())))
+    K = list(map(int, input().split()))
+    K.sort()
     print(solve(H, K))
 
