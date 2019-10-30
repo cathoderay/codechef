@@ -29,7 +29,7 @@ def prefix_sum(data):
     pre[0] = [0]*6
     for i in range(1, MAX_N):
         pre[i] = pre[i-1][:]
-        k = factors[i]
+        k = data[i]
         if 1 <= k <= 5:
             pre[i][k] += 1
     return pre
